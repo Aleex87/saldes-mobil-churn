@@ -1,7 +1,5 @@
 """Testnivå 3: modell. Kontrakt och reproducerbarhet."""
 
-import json
-from pathlib import Path
 
 import numpy as np
 import pytest
@@ -28,4 +26,3 @@ def test_reproducerbar(resultat):
     _, matvarden = resultat
     _, igen = trana_och_utvardera()
     assert igen == matvarden
-    
