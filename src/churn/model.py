@@ -3,6 +3,7 @@
 Skriver outputs/modell.joblib och outputs/matvarden.json.
 """
 # Test the trigger CI.
+# Verify cancellation of outdated CI runs.
 
 import hashlib
 import json
