@@ -2,6 +2,7 @@
 
 Skriver outputs/modell.joblib och outputs/matvarden.json.
 """
+# Test the trigger CI.
 
 import hashlib
 import json
