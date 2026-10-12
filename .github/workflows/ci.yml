@@ -22,7 +22,9 @@ on:
       - "requirements*.txt"
       - "uv.lock"
       - ".github/workflows/**"
-
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
     name: Test Python ${{ matrix.python-version }}
