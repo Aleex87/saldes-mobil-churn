@@ -45,7 +45,8 @@ def trana_och_utvardera(filnamn: str = DATAFIL) -> tuple[Pipeline, dict[str, flo
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.25, random_state=SEED, stratify=y
     )
-    modell = bygg_modell().fit(X_train, y_train)
+    # Simulate an incident: train on only 10 customers.
+    modell = bygg_modell().fit(X_train.iloc[:10], y_train.iloc[:10])
     sannolikhet = modell.predict_proba(X_test)[:, 1]
     matvarden = {
         "roc_auc": float(roc_auc_score(y_test, sannolikhet)),
